@@ -22,8 +22,8 @@ echo -e "${STEP}. Your sonarqube token is: (please go to http://8.131.255.5/sona
 
 while :; do
   read -r SONARQUBE_TOKEN
-  [[ ${SONARQUBE_TOKEN} =~ ^[a-z0-9]{40}$ ]] && break
-  echo -e "<< ERROR >>: Your token should be 40 hexadecimals. Try again:"
+  [[ $(curl -s -o /dev/null -w "%{http_code}" -u "${SONARQUBE_TOKEN}": http://8.131.255.5/sonarqube/api/user_tokens/search) -eq "200" ]] && break
+  echo -e "<< ERROR >>: We cannot verify this username with GTB sonarqube server, Please try again or contact your coach:"
 done
 
 ######## Set up #######
