@@ -2,7 +2,7 @@
 
 THIS_TERM="term102"
 STEP=0
-BASE_URL="http://8.131.255.5/dashboard"
+BASE_URL="http://8.131.255.5"
 
 echo -e "\nHi, Welcome to GTB ${THIS_TERM}.\n"
 
@@ -36,7 +36,7 @@ while :; do
 
   FULL_NAME=$(echo "${FAMILY_NAME}.${GIVEN_NAME}" | tr '[:upper:]' '[:lower:]')
 
-  [ "$(curl -s -o /dev/null -w "%{http_code}" "${BASE_URL}/api/terms/${THIS_TERM}/students?gtbUsername=${FULL_NAME}")" -eq "200" ] && break
+  [ "$(curl -s -o /dev/null -w "%{http_code}" "${BASE_URL}/dashboard/api/terms/${THIS_TERM}/students?gtbUsername=${FULL_NAME}")" -eq "200" ] && break
   echo -e "<< ERROR >>: We cannot verify your name, Please try again or contact your coach:"
 done
 echo -e "\nGood job! Thank you ${FULL_NAME}.\n"
