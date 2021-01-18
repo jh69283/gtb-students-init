@@ -1,6 +1,6 @@
 #!/bin/bash
 
-THIS_TERM="term102"
+THIS_TERM="gtb-102"
 STEP=0
 BASE_URL="http://8.131.255.5"
 
