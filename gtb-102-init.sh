@@ -15,11 +15,6 @@ command -v npm >/dev/null 2>&1 || {
   exit 1
 }
 
-command -v gradle >/dev/null 2>&1 || {
-  echo '<< ERROR >>: please install gradle first.'
-  exit 1
-}
-
 npm install -g sonarqube-scanner
 command -v sonar-scanner >/dev/null 2>&1 || {
   echo '<< ERROR >>: cannot run sonarqube-scanner, contact your coach'
