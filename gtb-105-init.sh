@@ -1,27 +1,10 @@
 #!/bin/bash
 
-THIS_TERM="gtb-104"
+THIS_TERM="gtb-105"
 STEP=0
 BASE_URL="http://8.131.255.5"
 
 echo -e "\nHi, Welcome to GTB ${THIS_TERM}.\n"
-
-######## Set up npm sonar-scanner #######
-STEP=$((STEP + 1))
-echo -e "${STEP}. Install sonar-scanner locally"
-
-command -v npm >/dev/null 2>&1 || {
-  echo '<< ERROR >>: please install npm first.'
-  exit 1
-}
-
-npm install -g sonarqube-scanner
-command -v sonar-scanner >/dev/null 2>&1 || {
-  echo '<< ERROR >>: cannot run sonarqube-scanner, contact your coach'
-  exit 1
-}
-
-echo -e '\n'
 
 ######## Full Name #######
 STEP=$((STEP + 1))
