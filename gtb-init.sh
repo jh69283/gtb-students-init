@@ -43,8 +43,7 @@ done
 
 echo -e "\nYour local environment is setting up, please wait..."
 mkdir -p ~/.gradle && touch ~/.gradle/gradle.properties
-
-grep -vq "systemProp.gtb" ~/.gradle/gradle.properties >tmp || mv tmp ~/.gradle/gradle.properties
+sed -i.bak '/gtb/d' ~/.gradle/gradle.properties
 
 {
   echo "systemProp.gtb.sonar.host.url=${BASE_URL}/sonarqube/"
