@@ -2,7 +2,7 @@
 
 #THIS_TERM="gtb-105"
 STEP=0
-BASE_URL="http://s.v2my.xyz:8104"
+BASE_URL="https://s.v2my.xyz"
 
 echo -e "\nHi, Welcome to GTB.\n"
 
